@@ -1,17 +1,15 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
 import Home from "./screens/Home";
 import Settings from "./screens/Settings";
-import SpellWord from "./screens/SpellWord";
+import WordListOverView from "./screens/WordListOverview";
+import { createStackNavigator } from "@react-navigation/stack";
 import WordsLearnt from "./screens/WordsLearnt";
 import WordListOverview from "./screens/WordListOverview";
 import WordLists from "./screens/WordLists";
-
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const BottomTabs = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -73,8 +71,8 @@ export default function App() {
           />
           <Stack.Screen name="WordListOverview" component={WordListOverview} />
           <Stack.Screen
-            name="SpellWord"
-            component={SpellWord}
+            name="WordsLearnt"
+            component={WordsLearnt}
             options={{ presentation: "modal" }}
           />
         </Stack.Navigator>

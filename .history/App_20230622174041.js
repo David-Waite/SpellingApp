@@ -1,17 +1,16 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
 import Home from "./screens/Home";
 import Settings from "./screens/Settings";
+import WordListOverView from "./screens/WordListOverview";
 import SpellWord from "./screens/SpellWord";
+import { createStackNavigator } from "@react-navigation/stack";
 import WordsLearnt from "./screens/WordsLearnt";
 import WordListOverview from "./screens/WordListOverview";
 import WordLists from "./screens/WordLists";
-
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const BottomTabs = createBottomTabNavigator();
 const Stack = createStackNavigator();

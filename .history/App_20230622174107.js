@@ -2,7 +2,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
 import Home from "./screens/Home";
 import Settings from "./screens/Settings";
 import SpellWord from "./screens/SpellWord";
@@ -12,7 +11,6 @@ import WordLists from "./screens/WordLists";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 const BottomTabs = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
