@@ -3,9 +3,9 @@ import { View } from "react-native";
 import { GlobalStyles } from "../../constants/styles";
 import { Pressable } from "react-native";
 
-function Card({ children, onPress }) {
+function Card({ children, onPress, style, border }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container]}>
       <Pressable onPress={onPress}>{children}</Pressable>
     </View>
   );
@@ -20,6 +20,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 40,
     paddingVertical: 10,
+    borderColor: GlobalStyles.colors.primary800,
+    borderWidth: 1,
+  },
+  containerBackground: {
     backgroundColor: GlobalStyles.colors.primary100,
   },
 });
