@@ -54,9 +54,9 @@ function BottomTabsScreens() {
               }}
             />
           ),
+
           title: "Home",
           tabBarLabel: "Home",
-
           tabBarIcon: ({ color, size }) => (
             <Ionicons
               name="home-outline"

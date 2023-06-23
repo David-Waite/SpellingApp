@@ -5,8 +5,8 @@ import WordList from "../components/WordLists/WordList";
 function WordLists({ navigation }) {
   return (
     <BackgroundImage>
-      <View style={style.container}>
-        <WordList title="example" />
+      <View>
+        <WordList>Example</WordList>
         <Text onPress={() => navigation.navigate("WordListOverview")}>
           Example list
         </Text>

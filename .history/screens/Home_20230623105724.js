@@ -10,7 +10,6 @@ import Stats from "../components/ui/Home/Stats/Stats";
 import LearningListCard from "../components/ui/Home/LearningListCard";
 import QuoteCard from "../components/ui/Home/QuoteCard";
 import AppInfo from "../components/ui/Home/AppInfo";
-import BackgroundImage from "../components/ui/BackgroundImage";
 
 const DUMMY_QUOTE = {
   title: "Be Consistent",
@@ -21,9 +20,10 @@ const DUMMY_QUOTE = {
 
 function Home({ navigation }) {
   return (
-    <BackgroundImage>
+    <ImageBackground>
       <View style={styles.container}>
         <Stats dayStreak={0} wordLearnt={0} />
+
         <RecentList recentList="example List" />
         <LearningListCard wordAmount={0} />
         <QuoteCard
@@ -31,10 +31,8 @@ function Home({ navigation }) {
           quote={DUMMY_QUOTE.quote}
           author={DUMMY_QUOTE.author}
         />
-        <AppInfo />
-        <WordsLearntCard navigation={navigation} />
-      </View>
-    </BackgroundImage>
+        
+    </ImageBackground>
   );
 }
 

@@ -1,15 +1,16 @@
 import { Text, StyleSheet } from "react-native";
 
-import { GlobalStyles } from "../../constants/styles";
+import { GlobalStyles } from "../../../constants/styles";
 import { Pressable } from "react-native";
 import { View } from "react-native";
+import Card from "../Card";
 
 function WordsLearntCard({ navigation }) {
   return (
     <Pressable onPress={() => navigation.navigate("WordsLearnt")}>
-      <View style={styles.container}>
+      <Card>
         <Text style={styles.WordsKnownText}>Words known</Text>
-      </View>
+      </Card>
     </Pressable>
   );
 }

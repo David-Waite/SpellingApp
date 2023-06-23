@@ -24,6 +24,7 @@ function Home({ navigation }) {
     <BackgroundImage>
       <View style={styles.container}>
         <Stats dayStreak={0} wordLearnt={0} />
+
         <RecentList recentList="example List" />
         <LearningListCard wordAmount={0} />
         <QuoteCard

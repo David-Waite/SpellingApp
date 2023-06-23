@@ -26,20 +26,8 @@ function BottomTabsScreens() {
       screenOptions={() => ({
         headerStyle: {
           backgroundColor: "green",
+          headerTitleAlign: "left",
         },
-        headerTitleAlign: "left",
-        headerTitleStyle: {
-          color: GlobalStyles.colors.accent500,
-          fontSize: 22,
-          marginLeft: 10,
-          fontWeight: 700,
-          marginBottom: -60,
-        },
-        headerStyle: {
-          backgroundColor: GlobalStyles.colors.primary400,
-          height: 110,
-        },
-        headerShadowVisible: false,
       })}
     >
       <BottomTabs.Screen
@@ -56,6 +44,19 @@ function BottomTabsScreens() {
           ),
           title: "Home",
           tabBarLabel: "Home",
+
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            color: GlobalStyles.colors.accent500,
+            fontSize: 22,
+            marginLeft: 10,
+            fontWeight: 700,
+            marginBottom: -60,
+          },
+          headerStyle: {
+            backgroundColor: GlobalStyles.colors.primary400,
+            height: 110,
+          },
 
           tabBarIcon: ({ color, size }) => (
             <Ionicons

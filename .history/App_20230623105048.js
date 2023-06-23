@@ -39,7 +39,6 @@ function BottomTabsScreens() {
           backgroundColor: GlobalStyles.colors.primary400,
           height: 110,
         },
-        headerShadowVisible: false,
       })}
     >
       <BottomTabs.Screen
@@ -56,6 +55,7 @@ function BottomTabsScreens() {
           ),
           title: "Home",
           tabBarLabel: "Home",
+          headerShadowVisible: false,
 
           tabBarIcon: ({ color, size }) => (
             <Ionicons

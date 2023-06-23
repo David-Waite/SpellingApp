@@ -1,4 +1,5 @@
 import { ImageBackground, Text, View } from "react-native";
+import { Dimensions } from "react-native";
 
 import { StyleSheet } from "react-native";
 import { GlobalStyles } from "../constants/styles";
@@ -10,7 +11,10 @@ import Stats from "../components/ui/Home/Stats/Stats";
 import LearningListCard from "../components/ui/Home/LearningListCard";
 import QuoteCard from "../components/ui/Home/QuoteCard";
 import AppInfo from "../components/ui/Home/AppInfo";
-import BackgroundImage from "../components/ui/BackgroundImage";
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
+const imageHeight = windowWidth / 3.5;
 
 const DUMMY_QUOTE = {
   title: "Be Consistent",
@@ -21,9 +25,10 @@ const DUMMY_QUOTE = {
 
 function Home({ navigation }) {
   return (
-    <BackgroundImage>
+    <ImageBackground>
       <View style={styles.container}>
         <Stats dayStreak={0} wordLearnt={0} />
+
         <RecentList recentList="example List" />
         <LearningListCard wordAmount={0} />
         <QuoteCard
@@ -34,7 +39,7 @@ function Home({ navigation }) {
         <AppInfo />
         <WordsLearntCard navigation={navigation} />
       </View>
-    </BackgroundImage>
+    </ImageBackground>
   );
 }
 

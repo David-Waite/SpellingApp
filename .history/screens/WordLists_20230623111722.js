@@ -6,7 +6,7 @@ function WordLists({ navigation }) {
   return (
     <BackgroundImage>
       <View style={style.container}>
-        <WordList title="example" />
+        <WordList>Example</WordList>
         <Text onPress={() => navigation.navigate("WordListOverview")}>
           Example list
         </Text>

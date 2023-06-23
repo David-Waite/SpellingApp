@@ -23,11 +23,18 @@ const Stack = createStackNavigator();
 function BottomTabsScreens() {
   return (
     <BottomTabs.Navigator
-      screenOptions={() => ({
-        headerStyle: {
-          backgroundColor: "green",
-        },
+      screenOptionsoptions={({ navigation }) => ({
+        headerRight: () => (
+          <CoffeeBtn
+            onPress={() => {
+              navigation.navigate("Donate");
+            }}
+          />
+        ),
+        title: "Home",
+        tabBarLabel: "Home",
         headerTitleAlign: "left",
+        headerShadowVisible: false,
         headerTitleStyle: {
           color: GlobalStyles.colors.accent500,
           fontSize: 22,
@@ -39,7 +46,14 @@ function BottomTabsScreens() {
           backgroundColor: GlobalStyles.colors.primary400,
           height: 110,
         },
-        headerShadowVisible: false,
+
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons
+            name="home-outline"
+            size={size}
+            color={GlobalStyles.colors.accent500}
+          />
+        ),
       })}
     >
       <BottomTabs.Screen
@@ -56,6 +70,19 @@ function BottomTabsScreens() {
           ),
           title: "Home",
           tabBarLabel: "Home",
+          headerTitleAlign: "left",
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            color: GlobalStyles.colors.accent500,
+            fontSize: 22,
+            marginLeft: 10,
+            fontWeight: 700,
+            marginBottom: -60,
+          },
+          headerStyle: {
+            backgroundColor: GlobalStyles.colors.primary400,
+            height: 110,
+          },
 
           tabBarIcon: ({ color, size }) => (
             <Ionicons

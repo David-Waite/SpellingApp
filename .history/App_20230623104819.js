@@ -23,24 +23,11 @@ const Stack = createStackNavigator();
 function BottomTabsScreens() {
   return (
     <BottomTabs.Navigator
-      screenOptions={() => ({
+      screenOptions={() => {
         headerStyle: {
-          backgroundColor: "green",
-        },
-        headerTitleAlign: "left",
-        headerTitleStyle: {
-          color: GlobalStyles.colors.accent500,
-          fontSize: 22,
-          marginLeft: 10,
-          fontWeight: 700,
-          marginBottom: -60,
-        },
-        headerStyle: {
-          backgroundColor: GlobalStyles.colors.primary400,
-          height: 110,
-        },
-        headerShadowVisible: false,
-      })}
+          backgroundColor: "green";
+        }
+      }}
     >
       <BottomTabs.Screen
         name="Home"
@@ -56,6 +43,19 @@ function BottomTabsScreens() {
           ),
           title: "Home",
           tabBarLabel: "Home",
+          headerTitleAlign: "left",
+          headerShadowVisible: false,
+          headerTitleStyle: {
+            color: GlobalStyles.colors.accent500,
+            fontSize: 22,
+            marginLeft: 10,
+            fontWeight: 700,
+            marginBottom: -60,
+          },
+          headerStyle: {
+            backgroundColor: GlobalStyles.colors.primary400,
+            height: 110,
+          },
 
           tabBarIcon: ({ color, size }) => (
             <Ionicons
