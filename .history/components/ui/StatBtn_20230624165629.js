@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
 import { Text, View } from "react-native";
-import { GlobalStyles } from "../../../../constants/styles";
+import { GlobalStyles } from "../../../constants/styles";
 
-function StatBtn({ stat, text }) {
+function StatBtn({ stat, text, extraStyles }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, extraStyles && extraStyles]}>
       <Text style={styles.stat}>
         {stat}
-        <Text style={styles.text}> {text}</Text>
+        <Text style={[styles.text, extraStyles && extraStyles]}> {text}</Text>
       </Text>
     </View>
   );
