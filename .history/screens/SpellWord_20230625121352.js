@@ -4,7 +4,6 @@ import SpellingForm from "../components/ui/SpellWord/SpellingForm";
 import IconButton from "../components/ui/IconButton";
 
 import { KeyboardAvoidingView } from "react-native";
-import ShowWordBtn from "../components/ui/SpellWord/ShowWordBtn";
 
 function SpellWord({ route }) {
   const wordlist = route.params.wordList;
@@ -12,12 +11,10 @@ function SpellWord({ route }) {
     <KeyboardAvoidingView
       style={styles.KeyboardAvoidingView}
       behavior={Platform.OS === "ios" ? "padding" : null}
-      keyboardVerticalOffset={90}
     >
-      <View style={styles.container}>
+      <View style={styles.inner}>
         <Text style={styles.title}>{wordlist.title}</Text>
         <SpellingForm word={"happy"} />
-
         <View style={styles.buttonContainer}>
           <IconButton
             icon="book-outline"
@@ -38,8 +35,8 @@ function SpellWord({ route }) {
             onPress={() => {}}
           />
         </View>
+        <View style={{ flex: 1 }} />
       </View>
-      <ShowWordBtn />
     </KeyboardAvoidingView>
   );
 }
@@ -51,7 +48,6 @@ const styles = StyleSheet.create({
     padding: 20,
     flex: 1,
     backgroundColor: GlobalStyles.colors.background,
-    justifyContent: "space-between",
   },
   KeyboardAvoidingView: {
     flex: 1,

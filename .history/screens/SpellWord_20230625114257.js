@@ -2,22 +2,20 @@ import { StyleSheet, Text, View } from "react-native";
 import { GlobalStyles } from "../constants/styles";
 import SpellingForm from "../components/ui/SpellWord/SpellingForm";
 import IconButton from "../components/ui/IconButton";
-
+import useKeyboardHeight from "react-native-use-keyboard-height";
 import { KeyboardAvoidingView } from "react-native";
-import ShowWordBtn from "../components/ui/SpellWord/ShowWordBtn";
 
 function SpellWord({ route }) {
+  const keyboardHeight = useKeyboardHeight();
   const wordlist = route.params.wordList;
-  return (
-    <KeyboardAvoidingView
-      style={styles.KeyboardAvoidingView}
-      behavior={Platform.OS === "ios" ? "padding" : null}
-      keyboardVerticalOffset={90}
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>{wordlist.title}</Text>
-        <SpellingForm word={"happy"} />
 
+  return (
+    <View style={styles.inner}>
+      <Text style={styles.title}>{wordlist.title}</Text>
+
+      <View>
+        <Text>{keyboardHeight}</Text>
+        <SpellingForm word={"happy"} />
         <View style={styles.buttonContainer}>
           <IconButton
             icon="book-outline"
@@ -39,8 +37,7 @@ function SpellWord({ route }) {
           />
         </View>
       </View>
-      <ShowWordBtn />
-    </KeyboardAvoidingView>
+    </View>
   );
 }
 
@@ -49,18 +46,20 @@ export default SpellWord;
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    flex: 1,
     backgroundColor: GlobalStyles.colors.background,
-    justifyContent: "space-between",
-  },
-  KeyboardAvoidingView: {
     flex: 1,
+  },
+  inner: {
+    flex: 1,
+    justifyContent: "space-around",
   },
   buttonContainer: {
+    marginVertical: 50,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   title: {
+    padding: 20,
     fontSize: 18,
     color: GlobalStyles.colors.accent500,
     fontWeight: "bold",

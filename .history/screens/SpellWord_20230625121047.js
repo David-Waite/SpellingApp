@@ -1,10 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { GlobalStyles } from "../constants/styles";
 import SpellingForm from "../components/ui/SpellWord/SpellingForm";
 import IconButton from "../components/ui/IconButton";
 
 import { KeyboardAvoidingView } from "react-native";
-import ShowWordBtn from "../components/ui/SpellWord/ShowWordBtn";
 
 function SpellWord({ route }) {
   const wordlist = route.params.wordList;
@@ -12,34 +11,33 @@ function SpellWord({ route }) {
     <KeyboardAvoidingView
       style={styles.KeyboardAvoidingView}
       behavior={Platform.OS === "ios" ? "padding" : null}
-      keyboardVerticalOffset={90}
     >
-      <View style={styles.container}>
-        <Text style={styles.title}>{wordlist.title}</Text>
-        <SpellingForm word={"happy"} />
-
-        <View style={styles.buttonContainer}>
-          <IconButton
-            icon="book-outline"
-            size={40}
-            color={"grey"}
-            onPress={() => {}}
-          />
-          <IconButton
-            icon="volume-high-outline"
-            size={40}
-            color={"grey"}
-            onPress={() => {}}
-          />
-          <IconButton
-            icon="chatbubbles-outline"
-            size={40}
-            color={"grey"}
-            onPress={() => {}}
-          />
+      <SafeAreaView>
+        <View style={styles.container}>
+          <Text style={styles.title}>{wordlist.title}</Text>
+          <SpellingForm word={"happy"} />
+          <View style={styles.buttonContainer}>
+            <IconButton
+              icon="book-outline"
+              size={40}
+              color={"grey"}
+              onPress={() => {}}
+            />
+            <IconButton
+              icon="volume-high-outline"
+              size={40}
+              color={"grey"}
+              onPress={() => {}}
+            />
+            <IconButton
+              icon="chatbubbles-outline"
+              size={40}
+              color={"grey"}
+              onPress={() => {}}
+            />
+          </View>
         </View>
-      </View>
-      <ShowWordBtn />
+      </SafeAreaView>
     </KeyboardAvoidingView>
   );
 }
@@ -51,7 +49,7 @@ const styles = StyleSheet.create({
     padding: 20,
     flex: 1,
     backgroundColor: GlobalStyles.colors.background,
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
   },
   KeyboardAvoidingView: {
     flex: 1,

@@ -17,7 +17,7 @@ function SpellWord({ route }) {
       <View style={styles.container}>
         <Text style={styles.title}>{wordlist.title}</Text>
         <SpellingForm word={"happy"} />
-
+        <ShowWordBtn />
         <View style={styles.buttonContainer}>
           <IconButton
             icon="book-outline"
@@ -39,7 +39,6 @@ function SpellWord({ route }) {
           />
         </View>
       </View>
-      <ShowWordBtn />
     </KeyboardAvoidingView>
   );
 }

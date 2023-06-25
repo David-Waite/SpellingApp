@@ -39,7 +39,6 @@ function SpellWord({ route }) {
           />
         </View>
       </View>
-      <ShowWordBtn />
     </KeyboardAvoidingView>
   );
 }

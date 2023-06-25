@@ -38,8 +38,8 @@ function SpellWord({ route }) {
             onPress={() => {}}
           />
         </View>
+        <ShowWordBtn />
       </View>
-      <ShowWordBtn />
     </KeyboardAvoidingView>
   );
 }
