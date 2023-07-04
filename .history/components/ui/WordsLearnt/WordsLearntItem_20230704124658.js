@@ -1,0 +1,20 @@
+import { StyleSheet } from "react-native";
+import { Pressable } from "react-native";
+import { View } from "react-native";
+import { GlobalStyles } from "../../../constants/styles";
+
+function WordLearntItem({ word }) {
+  <View></View>;
+}
+
+export default WordLearntItem;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: GlobalStyles.colors.background,
+    padding: 20,
+  },
+  pressed: {
+    backgroundColor: GlobalStyles.colors.primary300,
+  },
+});
